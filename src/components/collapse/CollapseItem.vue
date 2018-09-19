@@ -1,6 +1,7 @@
 <template>
   <div class="card is-fullwidth collapse-item" :class="{ 'is-active': isOpen }">
     <header class="card-header" @click="toggle">
+      <div v-if='iconClass' :class='iconClass'></div>
       <div class="card-header-title">{{ title }}</div>
       <span class="card-header-icon"><i class="fa fa-angle-right"></i></span>
     </header>
@@ -19,6 +20,7 @@ export default {
       type: Boolean,
       default: false,
     },
+    iconClass: String
   },
 
   data() {
